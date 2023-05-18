@@ -1,25 +1,5 @@
-## Prisma Command Line Interface
-
-### Installation
-
-```sh
-npm install -D prisma
-```
-
-### Initialize Prisma
-
-```sh
-npx prisma init
-```
-
-### Creating Schema
-
-```js
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-// It will connect the .env file DATABASE_URL with the Prisma Client
-// File Name: schema.prisma
-
 
 generator client {
   provider = "prisma-client-js"
@@ -94,10 +74,3 @@ model Reservation {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
 }
-```
-
-### Generate Collect From Schema
-
-```sh
-npx prisma db push
-```
